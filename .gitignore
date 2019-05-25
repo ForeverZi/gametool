@@ -1,0 +1,9 @@
+bin/
+pkg/
+*.exe
+src/github.com/acroca/go-symbols/
+src/github.com/go-delve/delve/
+src/github.com/mdempsky/gocode/
+src/github.com/ramya-rao-a/go-outline/
+src/github.com/sqs/goreturns/
+src/github.com/stamblerre/gocode/
