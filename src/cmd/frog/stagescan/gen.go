@@ -31,6 +31,10 @@ func main(){
 	if err != nil {
 		log.Fatal(err)
 	}
+	err = os.MkdirAll(finalBase, 0777)
+	if err != nil {
+		log.Fatal(err)
+	}
 	fmt.Println("search path: ", basepath)
 	sep := string([]rune{filepath.Separator})
 	if !strings.HasSuffix(basepath, sep) {
@@ -54,7 +58,7 @@ func main(){
 		}
 		for _, file := range files {
 			if strings.HasSuffix(file, ".prefab") {
-				stageConf[stageId] = append(stageConf[stageId], filepath.Base(file))
+				stageConf[stageId] = append(stageConf[stageId], filepath.Base(file[0:len(file)-7]))
 			}
 		}
 	}
